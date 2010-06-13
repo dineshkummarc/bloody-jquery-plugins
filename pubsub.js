@@ -28,6 +28,7 @@
 		//		with a function signature like: function(a,b,c){ ... }
 		//
 		//	|		$.publish("/some/topic", ["a","b","c"]);
+		if (!cache[topic]) { return; }
 		d.each(cache[topic], function(){
 			this.apply(d, args || []);
 		});
